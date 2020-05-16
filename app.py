@@ -13,12 +13,16 @@ app = Flask(__name__)
 
 #static route
 @app.route("/")
-def hello():
-    return "Hello World!"
+def index():
+    return render_template("index.html")
 
-@app.route("/1006")
-def test():
-    return "This is 1006"
+@app.route("/assignments")
+def assign():
+    return render_template("assignments.html")
+
+@app.route("/classes")
+def classes():
+    return render_template("classes.html")
 
 #start the server
 if __name__ == "__main__":
